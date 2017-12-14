@@ -1,0 +1,88 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    background-color: #e0c9a1;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+ /*HomePage*/
+.container-fluid {
+    width: 100%;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-1 {
+    background-image: url('../images/WoK.jpg');
+}
+fieldset {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #666666;
+    padding: 10px;
+    background-color: palegoldenrod;
+    position: relative;
+}
+legend {
+    border-radius: 10px;
+    text-align: center;
+    font-family: Sylfaen;
+    background-color: burlywood;
+    font-family: Rockwell;
+    font-size: xx-large;
+    color: #FFEFD5;
+}
+.contact {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #666666;
+    background-color: #D2B48C;
+    padding-bottom: 10px;
+    color: saddlebrown;
+}
+/*SingleModel Page*/
+.special {
+    color: #A0522D;
+}
+.characterName
+{
+    font-family: 'Courier New';
+    text-decoration: double;
+    color: chocolate;
+    font-size: 30px;
+}
+/* Wr
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+    .body-content {
+        padding: 0;
+    }
+}

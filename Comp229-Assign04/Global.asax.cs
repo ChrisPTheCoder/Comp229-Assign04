@@ -51,33 +51,29 @@ namespace Comp229_Assign04
         // sends updated json file to the user
         public static void EmailJsonFile(string clientEmailAddress, string clientName, string attachmentFileName)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-
+            SmtpClient smtpClient = new SmtpClient();
             MailMessage message = new MailMessage();
             try
             {
-                MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229-Assign04");
-                MailAddress toAddress = new MailAddress("ppham13@my.centennialcollege.ca", "Chris");
-                message.From = fromAddress;
-                message.To.Add(toAddress);
-                message.Subject = "Comp229-Assign04 email";
+                // These values should be set by the client.
+                MailAddress fromAddress = new MailAddress("ppham13@mycentennialcollege.ca", "From Me");
+                message.Subject = "Testing!";
                 message.Body = "This is the body of a sample message";
 
+                // These could be static, or dynamic, depending on situation.
+                MailAddress toAddress1 = new MailAddress("ppham13@mycentennialcollege.ca", "You");
+                MailAddress toAddress2 = new MailAddress("cc-comp229f2016@outlook.com", "You");
+                message.From = fromAddress;
+                message.To.Add(toAddress1);
+                message.To.Add(toAddress2);
                 smtpClient.Host = "smtp-mail.outlook.com";
-                smtpClient.EnableSsl = true;
-
-                // SET UseDefaultCredentials to false BEFORE setting Credentials
-                smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
-
                 smtpClient.Send(message);
-                //Response.Write("E-mail sent!");
-
+                //lblStatus.Text = "Email sent.";
             }
             catch (Exception ex)
             {
-                //Response.Write("Could not send the e-mail - error: " + ex.Message);
+                //lblStatus.Text = "Coudn't send the message!";
             }
         }
     }

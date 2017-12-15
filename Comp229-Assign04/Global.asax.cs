@@ -56,12 +56,12 @@ namespace Comp229_Assign04
             try
             {
                 // These values should be set by the client.
-                MailAddress fromAddress = new MailAddress("ppham13@mycentennialcollege.ca", "From Me");
+                MailAddress fromAddress = new MailAddress("from@example.com", "From Me");
                 message.Subject = "Testing!";
                 message.Body = "This is the body of a sample message";
 
                 // These could be static, or dynamic, depending on situation.
-                MailAddress toAddress1 = new MailAddress("ppham13@mycentennialcollege.ca", "You");
+                MailAddress toAddress1 = new MailAddress("to@example.com", "You");
                 MailAddress toAddress2 = new MailAddress("cc-comp229f2016@outlook.com", "You");
                 message.From = fromAddress;
                 message.To.Add(toAddress1);
@@ -69,11 +69,11 @@ namespace Comp229_Assign04
                 smtpClient.Host = "smtp-mail.outlook.com";
                 smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
                 smtpClient.Send(message);
-                //lblStatus.Text = "Email sent.";
+                //statusLabel.Text = "Email sent.";
             }
             catch (Exception ex)
             {
-                //lblStatus.Text = "Coudn't send the message!";
+                //statusLabel.Text = "Coudn't send the message!";
             }
         }
     }
